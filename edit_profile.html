@@ -1,0 +1,80 @@
+{% extends 'usernavigation.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container-mt-5">
+    <h2 class="text-center">EDIT PROFILE</h2>
+    <hr>
+    <div class="row">
+        <div class="col-sm-6">
+           <form method="post">
+            {% csrf_token%}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>FirstName</label>
+                    <input type="text" class="form-control" value="{{data.user.first_name}}" name="firstname">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>LastName</label>
+                    <input type="text" class="form-control" value="{{data.user.last_name}}" name="lastname">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Email Id</label>
+                    <input type="email" class="form-control" value="{{data.user.username}}" name="emailid" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Contact</label>
+                    <input type="number" class="form-control" value="{{data.contact}}" name="contact" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Roll No/Teacher Id</label>
+                    <input type="number" class="form-control" value="{{data.roll}}" name="roll" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Year</label>
+                    <select class="form-control" name="year" >
+                        <option value="{{data.year}}">{{data.year}}</option>
+                        <option value="1">Year 1</option>
+                        <option value="2">Year 2</option>
+                        <option value="3">Year 3</option>
+                        <option value="4">Year 4</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>Stream</label>
+                    <select class="form-control" name="stream" >
+                        <option value="Computer Science">Computer Science </option>
+                        <option value="Mechanical">Mechanical </option>
+                        <option value="Civil">Civil </option>
+                        <option value="Electrical">Electrical </option>
+                        <option value="Electronic & Communication">Electronic & Communication </option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 mt-2">
+                    <input type="text" value="{{data.stream}}" class="form-control" readonly>
+                </div>
+            </div>
+            <input type="submit" value="update" class="btn btn-primary mt-3">
+           </form> 
+        </div>
+    </div>
+</div>
+{% if error %}
+<script>
+    alert('Profile Updated Successfully');
+    window.location = "{% url 'profile' %}";
+</script>
+{% endif %}
+{% endblock %}

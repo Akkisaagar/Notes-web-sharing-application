@@ -1,0 +1,59 @@
+{% extends 'usernavigation.html' %}
+{% block body %}
+{% load static %}
+
+<div class="container mt-5"style="background-color: #ACE2E1">
+    <h2>UPLOAD NOTES</h2>
+                <hr>
+    <div class="row">
+        
+            <div class="col-sm-6">
+                <h2>UPLOAD NOTES</h2>
+                <hr>
+                <form  method="post" enctype="multipart/form-data">
+                     {% csrf_token %}
+                     <label>Stream</label>
+                    <select class="form-control" name="stream" required>
+                        <option value>------Select Branch------ </option>
+                        <option value="Computer Science">Computer Science </option>
+                        <option value="Mechanical">Mechanical </option>
+                        <option value="Civil">Civil </option>
+                        <option value="Electrical">Electrical </option>
+                        <option value="Electronic & Communication">Electronic & Communication </option>
+                    </select>
+                    <label>Select Year</label>
+                    <select class="form-control" name="year" required>
+                        <option value>------Select Year------ </option>
+                        <option value="1">Year 1</option>
+                        <option value="2">Year 2</option>
+                        <option value="3">Year 3</option>
+                        <option value="4">Year 4</option>
+                    </select>
+                    <label>Subject</label>
+                    <input type ="text" class="form-control"placeholder="Enter Subject name"name="subject" required>
+                    <label>Notes File</label>
+                    <input type ="file" class="form-control"name="notesfile">
+                    <label>File Type</label>
+                    <select class="form-control" name="filetype" required>
+                        <option value>------Select File Type------ </option>
+                        <option value="PDF">PDF</option>
+                        <option value="PPT">PPT</option>
+                        <option value="DOC/DOCX">DOC/DOCX</option>
+                        <option value="TXT">TXT</option>
+                        <option value="Image">Image</option>
+                        <option value="ZIP/RAR">ZIP/RAR</option>
+                    </select>
+                    <label>Description</label>
+                    <textarea class="form-control"name="description"></textarea>
+                    <input type="submit" class="form-control btn btn-primary mt-2"value="Upload">
+                </form>
+            </div>
+            <div class="col-sm-6">
+               
+                <img src="{%static 'images/8.jpg'%}" class="img-thumbnail" style="width:100% height: 345px">
+                 
+            </div> 
+    </div>
+</div>
+<br>
+{% endblock%}

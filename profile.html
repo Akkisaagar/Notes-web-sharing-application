@@ -1,0 +1,63 @@
+{% extends 'usernavigation.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container-mt-5">
+    <h2 class="text-center">PROFILE</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Full Name :</b>
+        </div>
+        <div class="col-md-6" style="text-transform: capitalize">
+           {{data.user.first_name}} {{data.user.middle_name}}  {{data.user.last_name}}
+        </div>
+    </div>
+   <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Email Id :</b>
+        </div>
+        <div class="col-md-6">
+           {{data.user.username}} 
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Contact :</b>
+        </div>
+        <div class="col-md-6">
+           {{data.contact}} 
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Year :</b>
+        </div>
+        <div class="col-md-6">
+           {{data.year}} 
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Stream :</b>
+        </div>
+        <div class="col-md-6">
+           {{data.stream}} 
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <b>Roll No  :</b>
+        </div>
+        <div class="col-md-6">
+           {{data.roll}} 
+        </div>
+    </div>
+    <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+</div>
+{% endblock %}

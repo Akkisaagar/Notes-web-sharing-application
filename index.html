@@ -1,0 +1,61 @@
+{% extends 'navigation.html' %}
+{% block body %}
+{% load static %}
+<style>
+.image{
+    width: 100%;
+    height: 470px;
+    background-image: url({% static 'images/1.png'%});
+    background-repeat:no-repeat;
+    background-position: center;
+    }
+</style>
+<div class ="image">
+    <div class="transparentbox">
+        <p> Study Notes Sharing Site</p>
+    </div>
+</div>
+<br>
+<br>
+
+<h4 class="text-center text-danger mt-10"> Just 4 steps to follow</h4>
+<div class="container mb-5" >
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="box1">
+                <p class="halfcircle"><i class="text-center fas fa-user-circle text-white mt-4" style="font-size : 40px"></i></p>
+                <p class="halfcircleBottom" style="font-size : 20px"><a href="{% url 'signup1' %}"> Create Account</a></p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="box1">
+                <p class="halfcircle"><i class="text-center fas fa-sign-in-alt text-white mt-4" style="font-size : 40px"></i></p>
+                <p class="halfcircleBottom" style="font-size : 20px"><a href="{% url 'user_login' %}"> Login</a></p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="box1">
+                <p class="halfcircle"><i class="text-center fas fa-upload text-white mt-4" style="font-size : 40px"></i></p>
+                <p class="halfcircleBottom" style="font-size : 20px"> <a href="{% url 'uploadnotes' %}"> Upload Notes</a></p>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="box1">
+                <p class="halfcircle"><i class="text-center fas fa-download text-white mt-4" style="font-size : 40px"></i></p>
+                <p class="halfcircleBottom" style="font-size : 20px"> <a href="{% url 'viewnotes' %}">Download Notes</a></p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <footer>
+        <a href="{% url 'faq' %}">faq</a>
+        <a href="{% url 'contact' %}">contact us</a>
+        <a href="{% url 'Termsofuse' %}">terms of use</a>
+        <a href="{% url 'privacypolicy' %}">privacy policy</a>
+        <a href="{% url 'refundpolicy' %}">refund policy</a>
+        <a  class=copyright href="{% url 'copyright' %}">&copy;2024 | AKASH</a>
+    </footer>
+</div>
+<br>
+{% endblock%}
